@@ -1,0 +1,23 @@
+.new-tweet {
+  border-radius: 5px;
+  padding-top: 1px;
+  background-color: #4056A1;
+  color: azure;
+  margin: 0 2em;
+  align-items: center;
+}
+
+.new-tweet h2 {
+  margin: 10px;
+  border-bottom: 1px solid azure;
+}
+
+form {
+  padding: 10px;
+  position: relative;
+}
+
+textarea {
+  padding: 5px;
+  width: 100%;
+}
