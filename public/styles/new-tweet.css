@@ -20,4 +20,12 @@ form {
 textarea {
   padding: 5px;
   width: 100%;
+  outline: none;
+}
+
+.btn {
+  background-color: #252c36;
+  color: azure;
+  padding: 10px;
+  font-family: 'Bungee', sans-serif;
 }
