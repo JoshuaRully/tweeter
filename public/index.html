@@ -42,10 +42,17 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <h1>Eloquent latin blabbers below...</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tristique sollicitudin nibh sit amet commodo. Massa eget egestas purus viverra accumsan in nisl nisi. Quam elementum pulvinar etiam non. Quis blandit turpis cursus in hac habitasse platea dictumst. Egestas sed sed risus pretium quam vulputate dignissim suspendisse. Arcu non odio euismod lacinia at quis risus sed vulputate. Sit amet dictum sit amet. Euismod elementum nisi quis eleifend quam adipiscing vitae. Aliquam vestibulum morbi blandit cursus risus at. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate. Sit amet tellus cras adipiscing enim eu turpis.
-      </p>
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form action="/tweets" method="POST">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div>
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
     </main>
   </body>
 </html>
