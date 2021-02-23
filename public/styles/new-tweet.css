@@ -30,3 +30,7 @@ textarea {
   padding: 10px;
   font-family: 'Bungee', sans-serif;
 }
+
+#alert-text {
+  color: red;
+}
