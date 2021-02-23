@@ -1,1 +1,0 @@
-console.log('Hey there from inside char counter js!');
