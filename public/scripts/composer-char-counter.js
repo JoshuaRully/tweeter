@@ -3,7 +3,7 @@ $(document).ready( function() {
   const charCount = '#tweet-text';
   const updateCount = function() {
     let remainder = 140 - $(this).val().length;
-    $('.counter').text(remainder);
+    $('.counter').text(remainder); // TODO: refactor to using .parent() etc. 
     if (remainder < 0) {
       $('output').attr('id', 'alert-text');
     } else {

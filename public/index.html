@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
     <!-- External JS -->
     <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -50,11 +51,16 @@
           <label for="tweet-text">What are you mumbling about?</label>
           <textarea name="text" id="tweet-text"></textarea>
           <div>
-            <button type="button" class="btn">Tweet</button>
+            <button type="submit" class="btn">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>
+      <article class="tweets">
+        <header>Morty Smith</header>
+        <p>Hey there palerino!</p>
+        <footer>10 days ago</footer>
+      </article>
     </main>
   </body>
 </html>
