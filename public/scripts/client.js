@@ -29,6 +29,14 @@ const data =
 
 // functions implemented below
 
+// styles tweet objects passed through it
+
+const humanTime = (epoch) => {
+  const tweetTime = new Date(0);
+  tweetTime.setUTCSeconds(epoch);
+  return tweetTime;
+};
+
 const createTweetElement = (tweet) => {
   let $tweet = $(`
   <article class="tweets">
@@ -41,7 +49,7 @@ const createTweetElement = (tweet) => {
     </header>
     <p>${tweet.content.text}</p>
     <footer>
-      <p>Posted at <time>${tweet.created_at}</time></p>
+      <p><time>${humanTime(tweet["created_at"])}</time></p>
       <div class="imgs">
         <img src="images/icons8-empty-flag-50.png" />
         <img src="images/icons8-retweet-50.png" />
@@ -53,6 +61,7 @@ const createTweetElement = (tweet) => {
   return $tweet
 }
 
+// loops through data and passes tweet objects to helper function
 const renderTweets = (tweets) => {
   for (const tweet of Object.values(tweets)) {
     $(".tweets-feed").append(createTweetElement(tweet));
