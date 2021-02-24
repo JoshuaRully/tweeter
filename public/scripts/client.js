@@ -1,6 +1,15 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
+//  test data below
+const tweetData = {
+  "user": {
+    "name": "Megos",
+    "avatars": "https://i.imgur.com/73hZDYK.png",
+    "handle": "@AlexMegos"
+  },
+  "content": {
+    "text": "There are no bad conditions, there is only weakness"
+  },
+  "created_at": 1613963731720
+}
+
+const $tweet = createTweetElement
 
