@@ -7,6 +7,11 @@
   align-items: center;
 }
 
+.new-tweet div {
+  display: flex;
+  justify-content: space-between;
+}
+
 .new-tweet h2 {
   margin: 10px;
   border-bottom: 1px solid azure;

@@ -5,6 +5,9 @@ nav {
   width: 100vw;
   background-color:#414263;
   color:azure;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 span {
