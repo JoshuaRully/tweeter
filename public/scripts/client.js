@@ -1,17 +1,30 @@
 //  test data below
 
-const tweetData =
-{
-  "user": {
-    "name": "Alex Megos",
-    "avatars": "images/megos.jpg",
-    "handle": "@CarrotsForPower"
+const data =
+[
+  {
+    "user": {
+      "name": "Alex Megos",
+      "avatars": "images/megos.jpg",
+      "handle": "@AlexMegos"
+    },
+    "content": {
+      "text": "There are no bad conditions, there is only weakness"
+    },
+    "created_at": 1614026101409
   },
-  "content": {
-    "text": "There are no bad conditions, there is only weakness"
-  },
-  "created_at": 1613963731720
-}
+  {
+    "user": {
+      "name": "Ben Howard",
+      "avatars": "images/howard.jpg",
+      "handle": "@BenHoward"
+    },
+    "content": {
+      "text": "Lonely, oh no not me\n I have a grave to dig fast\n Moving feet you gave me\n Light where it once was gone\n I made a bed where we don't belong"
+    },
+    "created_at": 1614112501409
+  }
+];
 
 
 // functions implemented below
@@ -40,11 +53,14 @@ const createTweetElement = (tweet) => {
   return $tweet
 }
 
+const renderTweets = (tweets) => {
+  for (const tweet of Object.values(tweets)) {
+    $(".tweets-feed").append(createTweetElement(tweet));
+  }
+};
+
 // more test data below
 
-const $tweet = createTweetElement(tweetData);
-
-console.log($tweet);
-$('.tweets-feed').append($tweet);
+renderTweets(data);
 
 
