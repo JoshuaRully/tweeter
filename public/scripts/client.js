@@ -1,42 +1,15 @@
-//  test data below
-
-const data =
-[
-  {
-    "user": {
-      "name": "Alex Megos",
-      "avatars": "images/megos.jpg",
-      "handle": "@AlexMegos"
-    },
-    "content": {
-      "text": "There are no bad conditions, there is only weakness"
-    },
-    "created_at": 1614026101409
-  },
-  {
-    "user": {
-      "name": "Ben Howard",
-      "avatars": "images/howard.jpg",
-      "handle": "@BenHoward"
-    },
-    "content": {
-      "text": "Lonely, oh no not me\n I have a grave to dig fast\n Moving feet you gave me\n Light where it once was gone\n I made a bed where we don't belong"
-    },
-    "created_at": 1614112501409
-  }
-];
-
+// TODO: implement document.on.ready 
 
 // functions implemented below
 
-// styles tweet objects passed through it
-
+// changes epoch time to readable time
 const humanTime = (epoch) => {
   const tweetTime = new Date(0);
   tweetTime.setUTCSeconds(epoch);
   return tweetTime;
 };
 
+// styles tweet objects passed through it
 const createTweetElement = (tweet) => {
   let $tweet = $(`
   <article class="tweets">
@@ -68,8 +41,25 @@ const renderTweets = (tweets) => {
   }
 };
 
-// more test data below
+// handles new tweet submission
+$("form").on("submit", function (event) {
+  event.preventDefault();
+// TODO: add text-length logic to prevent errors!!!
+  $.ajax({
+    url: "/tweets",
+    method: "POST",
+    data: $("form").serialize()
+  })
+})
 
-renderTweets(data);
-
-
+// loads tweets after tweet submission
+$("form").on("submit", function (event) {
+  event.preventDefault();
+  $.ajax({
+    url: "/tweets",
+    method: "GET",
+    data
+  }).then((result) => {
+    renderTweets(result)
+  })
+})
