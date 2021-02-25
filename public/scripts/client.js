@@ -12,7 +12,7 @@ const escape = function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
-}
+};
 
 // styles tweet objects passed through it
 const createTweetElement = (tweet) => {
@@ -36,8 +36,8 @@ const createTweetElement = (tweet) => {
     </footer>
   </article>
   `);
-  return $tweet
-}
+  return $tweet;
+};
 
 // loops through data and passes tweet objects to helper function
 const renderTweets = (tweets) => {
@@ -47,30 +47,30 @@ const renderTweets = (tweets) => {
 };
 
 // handles new tweet submission and rejects bad tweets
-// TODO: fix text overflowing from textarea of tweets 
-$("form").on("submit", function (event) {
+// TODO: fix text overflowing from textarea of tweets
+$("form").on("submit", function(event) {
   event.preventDefault();
   const tweetLength = $("textarea").val().length;
   const $tweetTooLong = $(
     `<span id="alert-msg">Please shorten your tweet</span>`
-    );
+  );
   const $tweetTooShort = $(
     `<span id="alert-msg">Please enter a tweet</span>`
-    );
+  );
   if (tweetLength > 140) {
     $(".err-text").empty();
     $(".err-text")
-    .append($tweetTooLong)
-    .hide()
-    .fadeIn()
+      .append($tweetTooLong)
+      .hide()
+      .fadeIn();
     return;
   }
   if (tweetLength === 0) {
     $(".err-text").empty();
     $(".err-text")
-    .append($tweetTooShort)
-    .hide()
-    .fadeIn()
+      .append($tweetTooShort)
+      .hide()
+      .fadeIn();
     return;
   }
   if (tweetLength > 0 && tweetLength <= 140) {
@@ -80,21 +80,21 @@ $("form").on("submit", function (event) {
     url: "/tweets",
     method: "POST",
     data: $("form").serialize()
-  })
+  });
   $("#tweet-text").val("");
-})
+});
 
 // loads tweets after tweet submission
 // TODO: stop spamming already posted tweets!!!!
 // TODO: prepend new tweets!!!
 $(document).ready(
-  $("form").on("submit", function (event) {
-  event.preventDefault();
-  $.ajax({
-    url: "/tweets",
-    method: "GET",
-  }).then((result) => {
-    renderTweets(result)
+  $("form").on("submit", function(event) {
+    event.preventDefault();
+    $.ajax({
+      url: "/tweets",
+      method: "GET",
+    }).then((result) => {
+      renderTweets(result);
+    });
   })
-})
-)
+);
