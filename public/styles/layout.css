@@ -37,3 +37,20 @@ body {
    justify-content: center;
    align-items: center;
  }
+
+ /* Tablet Styles */
+@media only screen and (min-width: 768px) {
+  .feature {
+    width: 33.3%;
+    line-height: 600px;
+  }
+
+  .content {
+    width: 66.7%;
+    float: right
+  }
+
+  .footer {
+    clear: right;
+  }
+}
