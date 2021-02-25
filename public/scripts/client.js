@@ -47,16 +47,34 @@ const renderTweets = (tweets) => {
 };
 
 // handles new tweet submission and rejects bad tweets
+// TODO: fix text overflowing from textarea of tweets 
 $("form").on("submit", function (event) {
   event.preventDefault();
   const tweetLength = $("textarea").val().length;
+  const $tweetTooLong = $(
+    `<span id="alert-msg">Please shorten your tweet</span>`
+    );
+  const $tweetTooShort = $(
+    `<span id="alert-msg">Please enter a tweet</span>`
+    );
   if (tweetLength > 140) {
-    alert("Please shorten tweet :)");
+    $(".err-text").empty();
+    $(".err-text")
+    .append($tweetTooLong)
+    .hide()
+    .fadeIn()
     return;
   }
   if (tweetLength === 0) {
-    alert("Please write a tweet first :)");
+    $(".err-text").empty();
+    $(".err-text")
+    .append($tweetTooShort)
+    .hide()
+    .fadeIn()
     return;
+  }
+  if (tweetLength > 0 && tweetLength <= 140) {
+    $(".err-text").children().empty();
   }
   $.ajax({
     url: "/tweets",
@@ -68,6 +86,7 @@ $("form").on("submit", function (event) {
 
 // loads tweets after tweet submission
 // TODO: stop spamming already posted tweets!!!!
+// TODO: prepend new tweets!!!
 $(document).ready(
   $("form").on("submit", function (event) {
   event.preventDefault();

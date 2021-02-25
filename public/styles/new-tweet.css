@@ -40,3 +40,8 @@ textarea {
 #alert-text {
   color: red;
 }
+
+#alert-msg {
+  margin-left: 28%;
+  color: red;
+}
