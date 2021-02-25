@@ -1,5 +1,3 @@
-// TODO: implement document.on.ready 
-
 // functions implemented below
 
 // changes epoch time to readable time
@@ -41,10 +39,18 @@ const renderTweets = (tweets) => {
   }
 };
 
-// handles new tweet submission
+// handles new tweet submission and rejects bad tweets
 $("form").on("submit", function (event) {
   event.preventDefault();
-// TODO: add text-length logic to prevent errors!!!
+  const tweetLength = $("textarea").val().length;
+  if (tweetLength > 140) {
+    alert("Please shorten tweet :)");
+    return;
+  }
+  if (tweetLength === 0) {
+    alert("Please write a tweet first :)");
+    return;
+  }
   $.ajax({
     url: "/tweets",
     method: "POST",
@@ -53,13 +59,14 @@ $("form").on("submit", function (event) {
 })
 
 // loads tweets after tweet submission
-$("form").on("submit", function (event) {
+$(document).ready(
+  $("form").on("submit", function (event) {
   event.preventDefault();
   $.ajax({
     url: "/tweets",
     method: "GET",
-    data
   }).then((result) => {
     renderTweets(result)
   })
 })
+)
