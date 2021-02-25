@@ -42,7 +42,7 @@ const createTweetElement = (tweet) => {
 // loops through data and passes tweet objects to helper function
 const renderTweets = (tweets) => {
   for (const tweet of Object.values(tweets)) {
-    $(".tweets-feed").append(createTweetElement(tweet));
+    $(".tweets-feed").prepend(createTweetElement(tweet));
   }
 };
 
@@ -86,7 +86,6 @@ $("form").on("submit", function(event) {
 
 // loads tweets after tweet submission
 // TODO: stop spamming already posted tweets!!!!
-// TODO: prepend new tweets!!!
 $(document).ready(
   $("form").on("submit", function(event) {
     event.preventDefault();
