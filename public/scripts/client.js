@@ -7,6 +7,13 @@ const humanTime = (epoch) => {
   return tweetTime;
 };
 
+// no more breaky breaky pal
+const escape = function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
 // styles tweet objects passed through it
 const createTweetElement = (tweet) => {
   let $tweet = $(`
@@ -14,11 +21,11 @@ const createTweetElement = (tweet) => {
     <header>
       <div id="user-info">
         <img id="user-pic" src=${tweet.user.avatars} alt="No pic!"/>
-        <p>${tweet.user.name}</p>
+        <p>${escape(tweet.user.name)}</p>
       </div>
-      <p id="user">${tweet.user.handle}</p>
+      <p id="user">${escape(tweet.user.handle)}</p>
     </header>
-    <p>${tweet.content.text}</p>
+    <p>${escape(tweet.content.text)}</p>
     <footer>
       <p><time>${humanTime(tweet["created_at"])}</time></p>
       <div class="imgs">
@@ -56,9 +63,11 @@ $("form").on("submit", function (event) {
     method: "POST",
     data: $("form").serialize()
   })
+  $("#tweet-text").val("");
 })
 
 // loads tweets after tweet submission
+// TODO: stop spamming already posted tweets!!!!
 $(document).ready(
   $("form").on("submit", function (event) {
   event.preventDefault();
