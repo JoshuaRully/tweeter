@@ -100,7 +100,8 @@ $("form").on("submit", (event) => {
     url: "/tweets",
     method: "POST",
     data: $("form").serialize()
-  });
-  $("#tweet-text").val("");
-  loadTweets();
+  }).then( function () {
+    $("#tweet-text").val("")
+    loadTweets()
+  })
 });
