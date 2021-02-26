@@ -15,3 +15,16 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+- body-parser
+- chance
+
+## Usage 
+
+- Best used in a half-screen browser window
+- Click the `create a tweet` button in the top right to get started
+- Compose an eloquent tweet to suit your fancy, anything goes and you won't get banned! A feature even Twitter can't promise 👀
+- Browse tweets by scrolling below the `compose tweet` box; hover over tweets to see user handlers and interaction icons
+
+## Final Product
+
+
