@@ -20,6 +20,7 @@ const escape = (str) => {
 };
 
 // styles tweet objects passed through it
+// TODO: fix text overflowing from textarea of tweets
 const createTweetElement = (tweet) => {
   let $tweet = $(`
   <article class="tweets">
@@ -59,15 +60,14 @@ const loadTweets = () => {
     method: "GET",
     data: $(".submit-tweet").serialize(),
     dataType: "json",
-    success: function (data) {
+    success: function(data) {
       renderTweets(data);
-    } 
+    }
   });
-}
+};
 loadTweets();
 
 // handles new tweet submission and rejects bad tweets
-// TODO: fix text overflowing from textarea of tweets
 $("form").on("submit", (event) => {
   event.preventDefault();
   const tweetLength = $("textarea").val().length;
@@ -100,8 +100,8 @@ $("form").on("submit", (event) => {
     url: "/tweets",
     method: "POST",
     data: $("form").serialize()
-  }).then( function () {
-    $("#tweet-text").val("")
-    loadTweets()
-  })
+  }).then(function() {
+    $("#tweet-text").val("");
+    loadTweets();
+  });
 });
