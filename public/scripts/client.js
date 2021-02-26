@@ -92,7 +92,6 @@ $("form").on("submit", function(event) {
 });
 
 // loads tweets after tweet submission
-// TODO: stop spamming already posted tweets!!!!
 const loadTweets = () => {
   $.ajax({
     url: "/tweets",
