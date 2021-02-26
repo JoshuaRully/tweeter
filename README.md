@@ -23,8 +23,13 @@ This repository is the starter code for the project: Students will fork and clon
 - Best used in a half-screen browser window
 - Click the `create a tweet` button in the top right to get started
 - Compose an eloquent tweet to suit your fancy, anything goes and you won't get banned! A feature even Twitter can't promise 👀
+- Press the `tweet` button in the buttom left of the `compose tweet` box
 - Browse tweets by scrolling below the `compose tweet` box; hover over tweets to see user handlers and interaction icons
 
 ## Final Product
 
-
+!["Large Window"](https://github.com/JoshuaRully/tweeter/blob/master/screenshots/largeWindow.png?raw=true)
+!["Small Window"](https://github.com/JoshuaRully/tweeter/blob/master/screenshots/window.png?raw=true)
+!["Tweet too long"](https://github.com/JoshuaRully/tweeter/blob/master/screenshots/tweetTooLong.png?raw=true)
+!["Tweet too short"](https://github.com/JoshuaRully/tweeter/blob/master/screenshots/tweetTooShort.png?raw=true)
+!["Hover"](https://github.com/JoshuaRully/tweeter/blob/master/screenshots/hover.png?raw=true)
