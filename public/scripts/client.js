@@ -1,5 +1,10 @@
 // functions implemented below
 
+// allows user to compose tweet without clicking on textarea
+$("#write-btn").on("click", function () {
+  $("#tweet-text").focus();
+});
+
 // changes epoch time to readable time
 const humanTime = (epoch) => {
   const tweetTime = new Date(0);
@@ -41,6 +46,7 @@ const createTweetElement = (tweet) => {
 
 // loops through data and passes tweet objects to helper function
 const renderTweets = (tweets) => {
+  $(".tweets-feed").empty();
   for (const tweet of Object.values(tweets)) {
     $(".tweets-feed").prepend(createTweetElement(tweet));
   }
@@ -82,18 +88,20 @@ $("form").on("submit", function(event) {
     data: $("form").serialize()
   });
   $("#tweet-text").val("");
+  loadTweets();
 });
 
 // loads tweets after tweet submission
 // TODO: stop spamming already posted tweets!!!!
-$(document).ready(
-  $("form").on("submit", function(event) {
-    event.preventDefault();
-    $.ajax({
-      url: "/tweets",
-      method: "GET",
-    }).then((result) => {
-      renderTweets(result);
-    });
-  })
-);
+const loadTweets = () => {
+  $.ajax({
+    url: "/tweets",
+    method: "GET",
+    data: $(".submit-tweet").serialize(),
+    dataType: "json",
+    success: function (data) {
+      renderTweets(data);
+    } 
+  });
+}
+loadTweets();

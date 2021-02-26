@@ -18,3 +18,9 @@ span {
 #logo {
   font-family: 'Bungee', sans-serif;
 }
+
+#write-btn {
+  font-family: sans-serif;
+  margin: 1.5em;
+  background-color: #a4adad;
+}

@@ -1,24 +1,24 @@
 [
   {
     "user": {
-      "name": "Megos",
+      "name": "Morty Smith",
       "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@AlexMegos"
+      "handle": "@MortimerSmithSr"
     },
     "content": {
-      "text": "There are no bad conditions, there is only weakness"
+      "text": "Anyone wanna go on a 20min adventure? In-n-out then right back to studying?"
     },
-    "created_at": 1614126763184
+    "created_at": 1614134819769
   },
   {
     "user": {
-      "name": "Howard",
+      "name": "Beth Smith",
       "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@BenHoward"
+      "handle": "@HorseGirl4Lyfe"
     },
     "content": {
-      "text": "Lonely, oh no not me\n I have a grave to dig fast\n Moving feet you gave me\n Light where it once was gone\n I made a bed where we don't belong"
+      "text": "Trust me I'm a horse doctor, I've saved countless lives..."
     },
-    "created_at": 1614213163184
+    "created_at": 1614221219769
   }
 ]
