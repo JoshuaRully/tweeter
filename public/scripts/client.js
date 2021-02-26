@@ -1,7 +1,7 @@
 // functions implemented below
 
 // allows user to compose tweet without clicking on textarea
-$("#write-btn").on("click", function () {
+$("#write-btn").on("click", () => {
   $("#tweet-text").focus();
 });
 
@@ -13,7 +13,7 @@ const humanTime = (epoch) => {
 };
 
 // no more breaky breaky pal
-const escape = function(str) {
+const escape = (str) => {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
@@ -52,9 +52,23 @@ const renderTweets = (tweets) => {
   }
 };
 
+// loads tweets after tweet submission
+const loadTweets = () => {
+  $.ajax({
+    url: "/tweets",
+    method: "GET",
+    data: $(".submit-tweet").serialize(),
+    dataType: "json",
+    success: function (data) {
+      renderTweets(data);
+    } 
+  });
+}
+loadTweets();
+
 // handles new tweet submission and rejects bad tweets
 // TODO: fix text overflowing from textarea of tweets
-$("form").on("submit", function(event) {
+$("form").on("submit", (event) => {
   event.preventDefault();
   const tweetLength = $("textarea").val().length;
   const $tweetTooLong = $(
@@ -90,17 +104,3 @@ $("form").on("submit", function(event) {
   $("#tweet-text").val("");
   loadTweets();
 });
-
-// loads tweets after tweet submission
-const loadTweets = () => {
-  $.ajax({
-    url: "/tweets",
-    method: "GET",
-    data: $(".submit-tweet").serialize(),
-    dataType: "json",
-    success: function (data) {
-      renderTweets(data);
-    } 
-  });
-}
-loadTweets();
