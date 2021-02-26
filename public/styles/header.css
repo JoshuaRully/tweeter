@@ -1,10 +1,17 @@
 #main-header {
   display: flex;
   height: 400px;
-  width: 100vw;
+  width: 33vw;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #a4adad;
   background-image: url("https://www.transparenttextures.com/patterns/arches.png");
+}
+
+#profile-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
