@@ -14,7 +14,7 @@ const humanTime = (epoch) => {
 
 // no more breaky breaky pal
 const escape = (str) => {
-  let div = document.createElement('div');
+  let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
