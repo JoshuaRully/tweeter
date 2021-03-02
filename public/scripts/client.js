@@ -40,7 +40,7 @@ const convertTime = (tweetTime) => {
   return timeStamp(timePassed);
 };
 
-// no more breaky breaky pal
+// prevents XSS in user-modifiable fields
 const escape = (str) => {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
@@ -48,7 +48,6 @@ const escape = (str) => {
 };
 
 // styles tweet objects passed through it
-// TODO: fix text overflowing from textarea of tweets
 const createTweetElement = (tweet) => {
   let $tweet = $(`
   <article class="tweets">

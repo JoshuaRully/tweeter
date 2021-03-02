@@ -1,6 +1,5 @@
 .tweets {
   font-size: 0.8em;
-  width: 30em;
   background-color: azure;
   display: flex;
   flex-direction: column;
@@ -9,6 +8,7 @@
   border-radius: 5px;
   transition: box-shadow 200ms;
 }
+  /* TODO: revise tweets and compose tweet boxes to be flush */
 
 .tweets:hover {
   box-shadow: 10px 10px 20px 10px;
