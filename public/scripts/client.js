@@ -5,11 +5,39 @@ $("#write-btn").on("click", () => {
   $("#tweet-text").focus();
 });
 
-// changes epoch time to readable time
-const humanTime = (epoch) => {
-  const tweetTime = new Date(0);
-  tweetTime.setUTCSeconds(epoch);
-  return tweetTime;
+// returns timeStamp depending on current time
+const convertTime = (tweetTime) => {
+  const now = new Date().getTime();
+  const created = tweetTime;
+  let timePassed = created - now;
+  const getHumanTime = function (timestamp) {
+    let time = Math.abs(timestamp);
+    let readableTime, timeUnits;
+    if (time > 1000 * 60 * 60 * 24 * 365) {
+      readableTime = parseInt(time / (1000 * 60 * 60 * 24 * 365), 10);
+      timeUnits = "years";
+    } else if (time > 1000 * 60 * 60 * 24 * 30) {
+      readableTime = parseInt(time / (1000 * 60 * 60 * 24 * 30), 10);
+      timeUnits = "months";
+    } else if (time > 1000 * 60 * 60 * 24 * 7) {
+      readableTime = parseInt(time / (1000 * 60 * 60 * 24 * 7), 10);
+      timeUnits = "weeks";
+    } else if (time > 1000 * 60 * 60 * 24) {
+      readableTime = parseInt(time / (1000 * 60 * 60 * 24), 10);
+      timeUnits = "days";
+    } else if (time > 1000 * 60 * 60) {
+      readableTime = parseInt(time / (1000 * 60 * 60), 10);
+      timeUnits = "hours";
+    } else if (time > 1000 * 60) {
+      readableTime = parseInt(time / (1000 * 60), 10);
+      timeUnits = "minutes";
+    } else {
+      readableTime = parseInt(time / 1000, 10);
+      timeUnits = "seconds";
+    }
+    return `${readableTime} ${timeUnits} ago`;
+  };
+  return getHumanTime(timePassed);
 };
 
 // no more breaky breaky pal
@@ -33,7 +61,7 @@ const createTweetElement = (tweet) => {
     </header>
     <p>${escape(tweet.content.text)}</p>
     <footer>
-      <p><time>${humanTime(tweet["created_at"])}</time></p>
+      <p><time>${convertTime(tweet.created_at)}</time></p>
       <div class="imgs">
         <img src="images/icons8-empty-flag-50.png" />
         <img src="images/icons8-retweet-50.png" />
