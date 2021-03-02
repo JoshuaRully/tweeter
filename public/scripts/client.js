@@ -10,7 +10,7 @@ const convertTime = (tweetTime) => {
   const now = new Date().getTime();
   const created = tweetTime;
   let timePassed = created - now;
-  const getHumanTime = function (timestamp) {
+  const timeStamp = function (timestamp) {
     let time = Math.abs(timestamp);
     let readableTime, timeUnits;
     if (time > 1000 * 60 * 60 * 24 * 365) {
@@ -37,7 +37,7 @@ const convertTime = (tweetTime) => {
     }
     return `${readableTime} ${timeUnits} ago`;
   };
-  return getHumanTime(timePassed);
+  return timeStamp(timePassed);
 };
 
 // no more breaky breaky pal
