@@ -103,5 +103,7 @@ $("form").on("submit", (event) => {
   }).then(function() {
     $("#tweet-text").val("");
     loadTweets();
+  }).then(function() {
+    $("output").text('140');
   });
 });
