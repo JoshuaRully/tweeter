@@ -40,16 +40,16 @@ body {
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px) {
-  .water-line {
+  .main-content {
     display: flex;
-  }
-  body {
     flex-direction: row;
   }
+
   /* TODO: fix profile header jumping around */
   #main-header {
     position: sticky;
     top: 0;
     padding-top: 50vh;
+    width: 33vw;
   }
 }
