@@ -28,28 +28,30 @@
       <span id="logo">Tweeter</span>
       <button type="button" id="write-btn"><b>Write</b> a new tweet</button>
     </nav>
-    <!-- User profile -->
-    <header id="main-header">
-      <img src="/images/rick-sanchez.jpg">
-      <h2>Rick Sanchez</h2>
-  </header>
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <!-- Post a tweet -->
-      <section class="new-tweet">
-        <span class="err-text"></span>
-        <h2>Compose Tweet</h2>
-        <form action="/tweets" method="POST">
-          <label for="tweet-text">What are you mumbling about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
-          <div>
-            <button type="submit" class="btn">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-      </section>
-      <!-- Tweet feed -->
-      <section class="tweets-feed"></section>
-    </main>
+    <div class="water-line">
+      <!-- User profile -->
+      <header id="main-header">
+        <img src="/images/rick-sanchez.jpg">
+        <h2>Rick Sanchez</h2>
+      </header>
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <!-- Post a tweet -->
+        <section class="new-tweet">
+          <span class="err-text"></span>
+          <h2>Compose Tweet</h2>
+          <form action="/tweets" method="POST">
+            <label for="tweet-text">What are you mumbling about?</label>
+            <textarea name="text" id="tweet-text"></textarea>
+            <div>
+              <button type="submit" class="btn">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>
+        <!-- Tweet feed -->
+        <section class="tweets-feed"></section>
+      </main>
+    </div>
   </body>
 </html>

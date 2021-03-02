@@ -31,7 +31,7 @@ body {
  */
 
 .container {
-   width: 90%;
+   /* width: 90%; */
    display: flex;
    flex-direction: column;
    justify-content: center;
@@ -40,6 +40,9 @@ body {
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px) {
+  .water-line {
+    display: flex;
+  }
   body {
     flex-direction: row;
   }
@@ -47,6 +50,6 @@ body {
   #main-header {
     position: sticky;
     top: 0;
-    left: 0;
+    padding-top: 50vh;
   }
 }
